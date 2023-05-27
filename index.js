@@ -6,11 +6,11 @@ const db = require('./config/mongoose');
 // initialize app & port
 const app = express();
 
-
 // Define app.use configurations
-app.use('/', require('./routes')); // user router
 app.use(express.urlencoded()); // used for getting values from request query
 app.use(express.static('assets')); // define asset folder
+app.use('/', require('./routes')); // user router
+
 
 // define app.set configurations
 app.set('view engine', 'ejs'); // initialize view engine
